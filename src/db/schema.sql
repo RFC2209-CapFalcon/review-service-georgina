@@ -1,53 +1,53 @@
 DROP SCHEMA sdc_reviews CASCADE;
+DROP DATABASE IF EXISTS review;
 
 CREATE SCHEMA sdc_reviews;
+CREATE DATABASE review;
 
-CREATE TABLE sdc_reviews.reviews (
-  review_id INT GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE reviews (
+  id INT,
+  product_id INT NOT NULL,
   rating INT NOT NULL,
+  date DATE NOT NULL,
   summary  TEXT NOT NULL,
   body TEXT  NOT NULL,
   recommend BOOLEAN DEFAULT false,
-  name VARCHAR(255) NOT NULL,
-  email VARCHAR(100) NOT NULL,
-  date DATE NOT NULL,
+  reported BOOLEAN DEFAULT false,
+  reviewer_name VARCHAR(255) NOT NULL,
+  reviewer_email VARCHAR(100) NOT NULL,
   response TEXT DEFAULT null,
   helpfulness INT DEFAULT 0,
-  product_id INT NOT NULL,
-  PRIMARY KEY(review_id)
+  PRIMARY KEY(id)
 );
 
-CREATE TABLE sdc_reviews.photos (
-  photo_id INT GENERATED ALWAYS AS IDENTITY,
-  url TEXT NOT NULL NOT NULL,
-  review_id INT NOT NULL NOT NULL,
-   PRIMARY KEY(photo_id),
+CREATE TABLE photos (
+  id INT,
+  review_id INT NOT NULL,
+  url TEXT NOT NULL,
+  PRIMARY KEY(id),
     FOREIGN KEY(review_id)
-    REFERENCES sdc_reviews.reviews(review_id)
+    REFERENCES reviews(id)
     ON DELETE SET NULL
-
 );
 
-CREATE TABLE sdc_reviews.characteristics (
-  characteristic_id INT GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE characteristics (
+  id INT,
   product_id INT NOT NULL,
-  type TEXT NOT NULL,
-  value DECIMAL NOT NULL,
-  PRIMARY KEY(characteristic_id)
+  name TEXT NOT NULL,
+  PRIMARY KEY(id)
 );
 
-CREATE TABLE sdc_reviews.characteristics_details (
-  characteristics_details_id INT GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE characteristics_reviews (
+  id INT,
   characteristic_id INT NOT NULL,
   review_id INT NOT NULL,
-  characteristic_name TEXT NOT NULL,
-  characteristic_rating INT NOT NULL,
-  PRIMARY KEY(characteristics_details_id),
+  value INT NOT NULL,
+  PRIMARY KEY(id),
   FOREIGN KEY(review_id)
-  REFERENCES sdc_reviews.reviews(review_id)
+  REFERENCES reviews(id)
       ON DELETE SET NULL,
   FOREIGN KEY(characteristic_id)
-  REFERENCES sdc_reviews.characteristics(characteristic_id)
+  REFERENCES characteristics(id)
       ON DELETE SET NULL
 );
 
