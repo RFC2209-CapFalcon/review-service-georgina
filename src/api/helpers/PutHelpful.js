@@ -1,17 +1,11 @@
 const {Review} = require('../../db/models/index.js')
 
-const PutHelpful = (req, res) => {
+const PutHelpful = async (req, res) => {
   const review_id = Number(req.params.review_id);
-  Review.findOne({
-    attributes:['helpfulness','date']
-    ,where:{id : review_id}})
-  .then((result)=> {
-    var helpfulness = result.dataValues.helpfulness + 1;
-    Review.update({helpfulness: helpfulness,date: result.dataValues.date},{where:{id: review_id}})
-    .then((result)=> {
-      res.send(result);
-    })
-})
+  const review = await Review.findByPk(review_id);
+  review.helpfulness += 1
+  const updateResult = await review.save();
+  res.send(null, 204)
 }
 
 module.exports = PutHelpful;

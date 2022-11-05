@@ -9,7 +9,7 @@ const PutReport = (req, res) => {
     var reported = result.dataValues.reported;
     Review.update({reported: true,date: result.dataValues.date},{where:{id: review_id}})
     .then((result)=> {
-      res.send(result);
+      res.send(null,204);
     })
 })
 }

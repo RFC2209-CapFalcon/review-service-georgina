@@ -24,15 +24,15 @@ const PostReview = (req, res) => {
 
    //post in Photo
    .then((result) => {
-    console.log(result.dataValues);
+    // console.log(result.dataValues);
      const newReviewId = result.dataValues.id;
      if(reqBody.photos.length) {
        reqBody.photos.forEach((p)=> {
          var newPhoto = Photo.build({review_id: newReviewId, url: p});
          newPhoto.save()
-         .then((result)=> {
-          console.log(result.dataValues);
-         })
+        //  .then((result)=> {
+        //   console.log(result.dataValues);
+        //  })
        })
      }
 
@@ -44,12 +44,12 @@ const PostReview = (req, res) => {
          ,value: Number(reqBody.characteristics[i])
        });
        newCharacReview.save()
-       .then((result)=> {
-        console.log(result.dataValues);
-       })
+      //  .then((result)=> {
+      //   console.log(result.dataValues);
+      //  })
      }
 
-     res.send('Posted')
+     res.send('Created',201)
    })
 }
 

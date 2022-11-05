@@ -23,6 +23,8 @@ const GetReviews = (req, res) => {
     if(result) {
       res.send({
         'product':productId
+        ,'page':page
+        ,'count': count
         ,'result':result});
     } else {
       throw result;

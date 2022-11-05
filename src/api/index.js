@@ -18,8 +18,8 @@ app.post('/reviews', (req, res)=> {
   PostReview(req,res);
 })
 
-app.put('/reviews/:review_id/helpful',(req,res) => {
-  PutHelpful(req,res);
+app.put('/reviews/:review_id/helpful', async (req,res) => {
+  await PutHelpful(req,res);
 })
 
 app.put('/reviews/:review_id/report',(req,res) => {
@@ -29,3 +29,5 @@ app.put('/reviews/:review_id/report',(req,res) => {
 
 app.listen(process.env.PORT);
 console.log(`Listening at http://localhost:${process.env.PORT}`);
+
+module.exports = app
