@@ -1,6 +1,6 @@
 const {Review, Characteristic_Review, Photo} = require('../../db/models/index.js')
 
-const PostReview = (req, res) => {
+const PostReview = async (req, res) => {
 
  // console.log(req.body);
  var reqBody = req.body;
@@ -18,39 +18,27 @@ const PostReview = (req, res) => {
    }
 
    newReview.date = Math.round((new Date()).getTime());
-  //  console.log(newReview);
-   const newPost = Review.build(newReview);
-   newPost.save()
 
-   //post in Photo
-   .then((result) => {
-    // console.log(result.dataValues);
-     const newReviewId = result.dataValues.id;
+   const newReviewId = (await Review.build(newReview).save()).dataValues.id;
+
+   //post in Photos
      if(reqBody.photos.length) {
-       reqBody.photos.forEach((p)=> {
+       reqBody.photos.forEach( async (p)=> {
          var newPhoto = Photo.build({review_id: newReviewId, url: p});
-         newPhoto.save()
-        //  .then((result)=> {
-        //   console.log(result.dataValues);
-        //  })
+         await newPhoto.save();
        })
      }
 
      //post in Characteristics review
-     for(let i in reqBody.characteristics) {
+     for (let i in reqBody.characteristics) {
        var newCharacReview = Characteristic_Review.build({
          characteristic_id: Number(i)
          ,review_id: newReviewId
          ,value: Number(reqBody.characteristics[i])
        });
-       newCharacReview.save()
-      //  .then((result)=> {
-      //   console.log(result.dataValues);
-      //  })
+       await newCharacReview.save()
      }
-
-     res.send('Created',201)
-   })
+     res.send({newReviewId},201)
 }
 
 module.exports = PostReview;

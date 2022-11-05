@@ -6,24 +6,24 @@ const{ GetReviews, GetReviewsMeta, PostReview, PutHelpful, PutReport} = require(
 const app = express();
 app.use(express.json());
 
-app.get('/reviews', (req, res) => {
-  GetReviews(req, res);
+app.get('/reviews', async (req, res) => {
+  await GetReviews(req, res);
 });
 
-app.get('/reviews/meta', (req, res)=> {
-  GetReviewsMeta(req,res);
+app.get('/reviews/meta', async (req, res)=> {
+  await GetReviewsMeta(req,res);
 })
 
-app.post('/reviews', (req, res)=> {
-  PostReview(req,res);
+app.post('/reviews', async (req, res)=> {
+  await PostReview(req,res);
 })
 
 app.put('/reviews/:review_id/helpful', async (req,res) => {
   await PutHelpful(req,res);
 })
 
-app.put('/reviews/:review_id/report',(req,res) => {
-  PutReport(req,res);
+app.put('/reviews/:review_id/report', async(req,res) => {
+  await PutReport(req,res);
 })
 
 
