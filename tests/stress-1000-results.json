@@ -1,0 +1,369 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.GET reviews by product_id": 2481,
+      "vusers.created": 10000,
+      "http.requests": 10000,
+      "vusers.created_by_name.POST review": 2523,
+      "http.codes.200": 791,
+      "http.responses": 3222,
+      "plugins.metrics-by-endpoint./reviews?product_id=66644&page=0&count=5&sort=relevant.codes.200": 791,
+      "vusers.failed": 6778,
+      "vusers.completed": 3222,
+      "http.codes.201": 836,
+      "plugins.metrics-by-endpoint./reviews.codes.201": 836,
+      "vusers.created_by_name.PUT report by review_id": 2461,
+      "http.codes.204": 1595,
+      "plugins.metrics-by-endpoint./reviews/384436/report.codes.204": 821,
+      "vusers.created_by_name.PUT helpful by review_id": 2535,
+      "plugins.metrics-by-endpoint./reviews/384436/helpful.codes.204": 774,
+      "errors.ECONNRESET": 133,
+      "errors.ENFILE": 9,
+      "errors.ENOTFOUND": 36,
+      "errors.ECONNREFUSED": 6600
+    },
+    "rates": {
+      "http.request_rate": 1000
+    },
+    "firstCounterAt": 1667882532441,
+    "firstHistogramAt": 1667882532462,
+    "lastCounterAt": 1667882542740,
+    "lastHistogramAt": 1667882535822,
+    "firstMetricAt": 1667882532441,
+    "lastMetricAt": 1667882542740,
+    "period": 1667882540000,
+    "summaries": {
+      "http.response_time": {
+        "min": 0,
+        "max": 250,
+        "count": 3222,
+        "p50": 16.9,
+        "median": 16.9,
+        "p75": 39.3,
+        "p90": 92.8,
+        "p95": 117.9,
+        "p99": 214.9,
+        "p999": 247.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews?product_id=66644&page=0&count=5&sort=relevant": {
+        "min": 0,
+        "max": 72,
+        "count": 791,
+        "p50": 13.1,
+        "median": 13.1,
+        "p75": 24.8,
+        "p90": 39.3,
+        "p95": 54.1,
+        "p99": 63.4,
+        "p999": 71.5
+      },
+      "vusers.session_length": {
+        "min": 1.1,
+        "max": 251.2,
+        "count": 3222,
+        "p50": 18.4,
+        "median": 18.4,
+        "p75": 40.9,
+        "p90": 94.6,
+        "p95": 122.7,
+        "p99": 214.9,
+        "p999": 247.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews": {
+        "min": 3,
+        "max": 250,
+        "count": 836,
+        "p50": 45.2,
+        "median": 45.2,
+        "p75": 106.7,
+        "p90": 165.7,
+        "p95": 198.4,
+        "p99": 242.3,
+        "p999": 252.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews/384436/report": {
+        "min": 0,
+        "max": 72,
+        "count": 821,
+        "p50": 10.9,
+        "median": 10.9,
+        "p75": 22.9,
+        "p90": 36.2,
+        "p95": 47,
+        "p99": 64.7,
+        "p999": 71.5
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews/384436/helpful": {
+        "min": 1,
+        "max": 115,
+        "count": 774,
+        "p50": 19.9,
+        "median": 19.9,
+        "p75": 43.4,
+        "p90": 64.7,
+        "p95": 100.5,
+        "p99": 111.1,
+        "p999": 115.6
+      }
+    },
+    "histograms": {
+      "http.response_time": {
+        "min": 0,
+        "max": 250,
+        "count": 3222,
+        "p50": 16.9,
+        "median": 16.9,
+        "p75": 39.3,
+        "p90": 92.8,
+        "p95": 117.9,
+        "p99": 214.9,
+        "p999": 247.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews?product_id=66644&page=0&count=5&sort=relevant": {
+        "min": 0,
+        "max": 72,
+        "count": 791,
+        "p50": 13.1,
+        "median": 13.1,
+        "p75": 24.8,
+        "p90": 39.3,
+        "p95": 54.1,
+        "p99": 63.4,
+        "p999": 71.5
+      },
+      "vusers.session_length": {
+        "min": 1.1,
+        "max": 251.2,
+        "count": 3222,
+        "p50": 18.4,
+        "median": 18.4,
+        "p75": 40.9,
+        "p90": 94.6,
+        "p95": 122.7,
+        "p99": 214.9,
+        "p999": 247.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews": {
+        "min": 3,
+        "max": 250,
+        "count": 836,
+        "p50": 45.2,
+        "median": 45.2,
+        "p75": 106.7,
+        "p90": 165.7,
+        "p95": 198.4,
+        "p99": 242.3,
+        "p999": 252.2
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews/384436/report": {
+        "min": 0,
+        "max": 72,
+        "count": 821,
+        "p50": 10.9,
+        "median": 10.9,
+        "p75": 22.9,
+        "p90": 36.2,
+        "p95": 47,
+        "p99": 64.7,
+        "p999": 71.5
+      },
+      "plugins.metrics-by-endpoint.response_time./reviews/384436/helpful": {
+        "min": 1,
+        "max": 115,
+        "count": 774,
+        "p50": 19.9,
+        "median": 19.9,
+        "p75": 43.4,
+        "p90": 64.7,
+        "p95": 100.5,
+        "p99": 111.1,
+        "p999": 115.6
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.GET reviews by product_id": 1835,
+        "vusers.created": 7410,
+        "http.requests": 7410,
+        "vusers.created_by_name.POST review": 1893,
+        "http.codes.200": 791,
+        "http.responses": 3222,
+        "plugins.metrics-by-endpoint./reviews?product_id=66644&page=0&count=5&sort=relevant.codes.200": 791,
+        "vusers.failed": 4188,
+        "vusers.completed": 3222,
+        "http.codes.201": 836,
+        "plugins.metrics-by-endpoint./reviews.codes.201": 836,
+        "vusers.created_by_name.PUT report by review_id": 1813,
+        "http.codes.204": 1595,
+        "plugins.metrics-by-endpoint./reviews/384436/report.codes.204": 821,
+        "vusers.created_by_name.PUT helpful by review_id": 1869,
+        "plugins.metrics-by-endpoint./reviews/384436/helpful.codes.204": 774,
+        "errors.ECONNRESET": 133,
+        "errors.ENFILE": 9,
+        "errors.ENOTFOUND": 36,
+        "errors.ECONNREFUSED": 4010
+      },
+      "rates": {
+        "http.request_rate": 1000
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1667882532441,
+      "firstHistogramAt": 1667882532462,
+      "lastCounterAt": 1667882539999,
+      "lastHistogramAt": 1667882535822,
+      "firstMetricAt": 1667882532441,
+      "lastMetricAt": 1667882539999,
+      "period": "1667882530000",
+      "summaries": {
+        "http.response_time": {
+          "min": 0,
+          "max": 250,
+          "count": 3222,
+          "p50": 16.9,
+          "median": 16.9,
+          "p75": 39.3,
+          "p90": 92.8,
+          "p95": 117.9,
+          "p99": 214.9,
+          "p999": 247.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews?product_id=66644&page=0&count=5&sort=relevant": {
+          "min": 0,
+          "max": 72,
+          "count": 791,
+          "p50": 13.1,
+          "median": 13.1,
+          "p75": 24.8,
+          "p90": 39.3,
+          "p95": 54.1,
+          "p99": 63.4,
+          "p999": 71.5
+        },
+        "vusers.session_length": {
+          "min": 1.1,
+          "max": 251.2,
+          "count": 3222,
+          "p50": 18.4,
+          "median": 18.4,
+          "p75": 40.9,
+          "p90": 94.6,
+          "p95": 122.7,
+          "p99": 214.9,
+          "p999": 247.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews": {
+          "min": 3,
+          "max": 250,
+          "count": 836,
+          "p50": 45.2,
+          "median": 45.2,
+          "p75": 106.7,
+          "p90": 165.7,
+          "p95": 198.4,
+          "p99": 242.3,
+          "p999": 252.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews/384436/report": {
+          "min": 0,
+          "max": 72,
+          "count": 821,
+          "p50": 10.9,
+          "median": 10.9,
+          "p75": 22.9,
+          "p90": 36.2,
+          "p95": 47,
+          "p99": 64.7,
+          "p999": 71.5
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews/384436/helpful": {
+          "min": 1,
+          "max": 115,
+          "count": 774,
+          "p50": 19.9,
+          "median": 19.9,
+          "p75": 43.4,
+          "p90": 64.7,
+          "p95": 100.5,
+          "p99": 111.1,
+          "p999": 115.6
+        }
+      },
+      "histograms": {
+        "http.response_time": {
+          "min": 0,
+          "max": 250,
+          "count": 3222,
+          "p50": 16.9,
+          "median": 16.9,
+          "p75": 39.3,
+          "p90": 92.8,
+          "p95": 117.9,
+          "p99": 214.9,
+          "p999": 247.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews?product_id=66644&page=0&count=5&sort=relevant": {
+          "min": 0,
+          "max": 72,
+          "count": 791,
+          "p50": 13.1,
+          "median": 13.1,
+          "p75": 24.8,
+          "p90": 39.3,
+          "p95": 54.1,
+          "p99": 63.4,
+          "p999": 71.5
+        },
+        "vusers.session_length": {
+          "min": 1.1,
+          "max": 251.2,
+          "count": 3222,
+          "p50": 18.4,
+          "median": 18.4,
+          "p75": 40.9,
+          "p90": 94.6,
+          "p95": 122.7,
+          "p99": 214.9,
+          "p999": 247.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews": {
+          "min": 3,
+          "max": 250,
+          "count": 836,
+          "p50": 45.2,
+          "median": 45.2,
+          "p75": 106.7,
+          "p90": 165.7,
+          "p95": 198.4,
+          "p99": 242.3,
+          "p999": 252.2
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews/384436/report": {
+          "min": 0,
+          "max": 72,
+          "count": 821,
+          "p50": 10.9,
+          "median": 10.9,
+          "p75": 22.9,
+          "p90": 36.2,
+          "p95": 47,
+          "p99": 64.7,
+          "p999": 71.5
+        },
+        "plugins.metrics-by-endpoint.response_time./reviews/384436/helpful": {
+          "min": 1,
+          "max": 115,
+          "count": 774,
+          "p50": 19.9,
+          "median": 19.9,
+          "p75": 43.4,
+          "p90": 64.7,
+          "p95": 100.5,
+          "p99": 111.1,
+          "p999": 115.6
+        }
+      }
+    }
+  ]
+}
