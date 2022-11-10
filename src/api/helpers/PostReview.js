@@ -2,7 +2,7 @@ const {Review, Characteristic_Review, Photo} = require('../../db/models/index.js
 
 const PostReview = async (req, res) => {
 
- // console.log(req.body);
+ console.log(req.body);
  var reqBody = req.body;
 
  //post in Review

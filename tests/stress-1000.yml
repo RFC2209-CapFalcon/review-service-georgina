@@ -1,0 +1,41 @@
+config:
+  target: "http://localhost:1128"
+  phases:
+    - duration: 10
+      arrivalRate: 1000
+      name: "1000 req/s"
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  - name: "GET reviews by product_id"
+    flow:
+      - get:
+          url: "/reviews?product_id=66644&page=0&count=5&sort=relevant"
+          weight: 1
+  - name: "PUT helpful by review_id"
+    flow:
+      - put:
+          url: "/reviews/384436/helpful"
+          weight: 1
+  - name: "PUT report by review_id"
+    flow:
+      - put:
+          url: "/reviews/384436/report"
+          weight: 1
+  - name: "POST review"
+    flow:
+      - post:
+          url: "/reviews"
+          json:
+            product_id: "66643"
+            rating: "5"
+            summary: "API TESTING POST!!!!!!!!!!G"
+            body: "Again testing API GGGGGGGGGGGGg~~~~~~~"
+            recommend: "true"
+            name: "gtestg"
+            email: "gtestg@gmail.com"
+            photos: ["http://res.cloudinary.com/dwl50vubn/image/upload/v1662659153/orkmflq6ssqr63nw8cbo.png","http://preview.redd.it/y844ktbgwom41.jpg?auto=webp&s=c8cd48ed66c7330f77a9078a7fdc25f57cd6203a"]
+            characteristics: { "222779":"5", "222780":"5", "222781":"4", "222782":"4" }
+          weight: 1
+
