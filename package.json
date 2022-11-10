@@ -5,11 +5,19 @@
   "scripts": {
     "server-dev": "npx nodemon --watch server src/api/index.js",
     "start": "node src/api/index.js",
-    "test": "jest"
+    "test": "jest",
+    "stress-test-1": "artillery run tests/stress-1.yml --output tests/stress-1-results.json",
+    "stress-test-10": "artillery run tests/stress-10.yml --output tests/stress-10-results.json",
+    "stress-test-100": "artillery run tests/stress-100.yml --output tests/stress-100-results.json",
+    "stress-test-1000": "artillery run tests/stress-1000.yml --output tests/stress-1000-results.json",
+    "stress-test": "yarn run stress-test-1 && yarn run stress-test-10 && yarn run stress-test-100 && yarn run stress-test-1000"
   },
   "license": "Unlicensed",
   "dependencies": {
+    "artillery": "^2.0.0-26",
+    "artillery-plugin-metrics-by-endpoint": "^1.0.2",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jest": "^29.2.2",

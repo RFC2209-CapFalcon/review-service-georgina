@@ -1,14 +1,8 @@
-DROP SCHEMA sdc_reviews CASCADE;
-DROP DATABASE IF EXISTS review;
-
-CREATE SCHEMA sdc_reviews;
-CREATE DATABASE review;
-
-CREATE TABLE reviews (
-  id INT,
+CREATE TABLE IF NOT EXISTS reviews (
+  id SERIAL PRIMARY KEY,
   product_id INT NOT NULL,
   rating INT NOT NULL,
-  date DATE NOT NULL,
+  date BIGINT NOT NULL,
   summary  TEXT NOT NULL,
   body TEXT  NOT NULL,
   recommend BOOLEAN DEFAULT false,
@@ -16,33 +10,29 @@ CREATE TABLE reviews (
   reviewer_name VARCHAR(255) NOT NULL,
   reviewer_email VARCHAR(100) NOT NULL,
   response TEXT DEFAULT null,
-  helpfulness INT DEFAULT 0,
-  PRIMARY KEY(id)
+  helpfulness INT DEFAULT 0
 );
 
-CREATE TABLE photos (
-  id INT,
+CREATE TABLE IF NOT EXISTS photos (
+  id SERIAL PRIMARY KEY,
   review_id INT NOT NULL,
   url TEXT NOT NULL,
-  PRIMARY KEY(id),
     FOREIGN KEY(review_id)
     REFERENCES reviews(id)
     ON DELETE SET NULL
 );
 
-CREATE TABLE characteristics (
-  id INT,
+CREATE TABLE IF NOT EXISTS characteristics (
+  id SERIAL PRIMARY KEY,
   product_id INT NOT NULL,
-  name TEXT NOT NULL,
-  PRIMARY KEY(id)
+  name TEXT NOT NULL
 );
 
-CREATE TABLE characteristics_reviews (
-  id INT,
+CREATE TABLE IF NOT EXISTS characteristics_reviews (
+  id SERIAL PRIMARY KEY,
   characteristic_id INT NOT NULL,
   review_id INT NOT NULL,
   value INT NOT NULL,
-  PRIMARY KEY(id),
   FOREIGN KEY(review_id)
   REFERENCES reviews(id)
       ON DELETE SET NULL,
